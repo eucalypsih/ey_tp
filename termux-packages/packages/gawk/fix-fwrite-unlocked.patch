@@ -1,0 +1,21 @@
+# ====================================================================
+# PATCH PENYESUAIAN UNTUK ANDROID / TERMUX
+# ====================================================================
+# Deskripsi: Menghapus makro fwrite_unlocked karena Android Bionic libc
+#            tidak mendukung fungsi tersebut. Memaksa gawk kembali
+#            menggunakan fungsi standar fwrite.
+# Author     : Kompilasi Lokal Termux
+# Target     : awk.h
+# ====================================================================
+# sed -i '/#define[[:space:]]\+fwrite[[:space:]]\+fwrite_unlocked/d' awk.h
+# patch -p1 < fix-fwrite-unlocked.patch
+--- a/awk.h.orig	2026-09-08 18:25:07.337004839 +0700
++++ b/awk.h	2026-09-08 18:38:18.213004537 +0700
+@@ -181,7 +181,6 @@
+ #endif /* HAVE_SETLOCALE */
+ 
+ #ifdef HAVE_FWRITE_UNLOCKED
+-#define fwrite	fwrite_unlocked
+ #endif /* HAVE_FWRITE_UNLOCKED */
+ 
+ #ifndef HAVE_TIMEGM
