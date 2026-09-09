@@ -114,6 +114,11 @@ curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/package
 
 curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/fix-fwrite-unlocked.patch && sleep 0.5 && patch -p1 < fix-fwrite-unlocked.patch
 
+curl -fsSLO https://github.com/termux/termux-packages/blob/master/packages/gawk/io.c.patch
+
+# 2. Ubah teks @TERMUX_PREFIX@ di dalam file patch menjadi variabel lingkungan asli Termux ($PREFIX)
+sed -i "s|@TERMUX_PREFIX@|$PREFIX|g" io.c.patch
+
 ```
 
 ```
