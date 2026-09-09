@@ -100,21 +100,21 @@ cd gawk-5.4.1
 
 ```bash
 # 1. Unduh patch urutan include
-curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/packages/gawk/fix-include-order.patch && sleep 0.5 && patch -p1 < fix-include-order.patch
+curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/fix-include-order.patch && sleep 0.5 && patch -p1 < fix-include-order.patch
 
 # 2. Unduh patch untuk locale Android
-curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/packages/gawk/fix-locale.patch && sleep 0.5 && patch -p1 < fix-locale.patch
+curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/fix-locale.patch && sleep 0.5 && patch -p1 < fix-locale.patch
 
 # 3. Unduh patch untuk penyesuaian index stack
-curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/packages/gawk/stack_index.patch && sleep 0.5 && patch -p1 < stack_index.patch
+curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/stack_index.patch && sleep 0.5 && patch -p1 < stack_index.patch
 
 # 4. Unduh patch untuk menonaktifkan pencarian akun user (getpwent)
-curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/packages/gawk/no_pw_gecos.patch && sleep 0.5 && patch -p1 < no_pw_gecos.patch
+curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/no_pw_gecos.patch && sleep 0.5 && patch -p1 < no_pw_gecos.patch
 
 
 sed -i '/#define[[:space:]]\+fwrite[[:space:]]\+fwrite_unlocked/d' awk.h
 
-curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/packages/gawk/fix-fwrite-unlocked.patch && sleep 0.5 && patch -p1 < fix-fwrite-unlocked.patch
+curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/fix-fwrite-unlocked.patch && sleep 0.5 && patch -p1 < fix-fwrite-unlocked.patch
 
 ```
 
