@@ -112,8 +112,6 @@ curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/package
 curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/no_pw_gecos.patch && sleep 0.5 && patch -p1 < no_pw_gecos.patch
 
 
-sed -i '/#define[[:space:]]\+fwrite[[:space:]]\+fwrite_unlocked/d' awk.h
-
 curl -fsSLO https://github.com/eucalypsih/ey_tp/raw/main/termux-packages/packages/gawk/fix-fwrite-unlocked.patch && sleep 0.5 && patch -p1 < fix-fwrite-unlocked.patch
 
 ```
