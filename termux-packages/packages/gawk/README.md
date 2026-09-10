@@ -145,4 +145,12 @@ diff -u awk.h.orig awk.h > fix-fwrite-unlocked.patch
 
 
 
+
+
+
+
+
+
+
+
 <br>
